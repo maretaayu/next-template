@@ -39,22 +39,30 @@ function Hero() {
             />
           ))}
 
-          <p className="font-semibold">+150K</p>
+          <p className="font-semibold">100+</p>
         </div>
-        <p className="text-2xl font-normal opacity-40">
+        <p className="text-2xl font-normal opacity-40 mb-5">
           Place your trust in me to deliver clean, efficient, and future-proof
           solutions that make an <b>impact</b>
         </p>
       </div>
 
-      <div className="bg-gray-50 p-16 flex flex-col items-center">
+      <div className="bg-gray-50 p-16 flex flex-col items-center relative">
         <Image
           src="/John.png"
           width={282}
           height={400}
           alt="John Doe"
-          className="hidden md:block"
+          className="hidden md:block  "
         />
+        <Image
+          src="/OptimizedScore.png"
+          width={235}
+          height={204}
+          alt="Optimized Score"
+          className="hidden md:block absolute bottom-60 left-[-40px] animate-bounce"
+        />
+
         <div>
           {items.map((item, index) => (
             <div key={index} className="flex gap-2  justify-between">
