@@ -1,7 +1,7 @@
-import { Achievement } from "./components/achievement";
-import { Hero } from "./components/hero";
-import { Portfolio } from "./components/portfolio";
-import { Testimony } from "./components/testimony";
+import { Achievement } from "./components/Achievement";
+import { Hero } from "./components/Hero";
+import { Portfolio } from "./components/Portfolio";
+import { Testimony } from "./components/Testimony";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
