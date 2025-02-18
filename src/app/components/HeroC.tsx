@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Button } from "./Button";
+import { Button } from "./ButtonC";
 
 const images = [
   { src: "/img-1.png", alt: "Project 1" },
