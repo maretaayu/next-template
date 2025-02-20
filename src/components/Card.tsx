@@ -1,27 +1,27 @@
 import Image from "next/image";
+import Link from "next/link";
 
 type CardProps = {
-  image: string;
+  thumbnail: string;
   title: string;
   url: string;
+  subtitle?: string;
+  description?: string;
 };
 
-function Card({ image, title, url }: CardProps) {
+function Card({ thumbnail, title, url, subtitle, description }: CardProps) {
   return (
-    <a
-      href={url}
-      className="font-bold text-black text-left flex flex-col gap-4"
-    >
-      <Image
-        src={image}
-        alt={title}
-        className="rounded-2xl w-full"
-        width={300}
-        height={400}
-      />
-      <p>{title}</p>
-    </a>
+    <div>
+      <Link href={url}>
+        <Image src={thumbnail} alt={title} width={270} height={225} />
+        <div className="mt-3">
+          <h3 className="text-left font-bold text-black">{title}</h3>
+          {subtitle && <p className="text-left">{subtitle}</p>}
+          {description && <p className="text-left opacity-50">{description}</p>}
+        </div>
+      </Link>
+    </div>
   );
 }
 
-export { Card };
+export default Card;

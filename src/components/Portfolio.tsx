@@ -1,4 +1,4 @@
-import { Card } from "./Card";
+import Card from "./Card";
 
 const CardData = [
   {
@@ -40,7 +40,7 @@ function Portfolio() {
         {CardData.map((item) => (
           <Card
             key={item.id}
-            image={item.image}
+            thumbnail={item.image}
             title={item.title}
             url={item.url}
           />
