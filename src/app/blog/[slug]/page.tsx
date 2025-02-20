@@ -1,17 +1,18 @@
 import { posts } from "../../../data/content";
 import Link from "next/link";
-import { use } from "react";
 
-type BlogParams = Promise<{ slug: string }>;
-
-export default function BlogPost({ params }: { params: BlogParams }) {
-  const { slug } = use(params);
+export default async function Page({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const slug = (await params).slug;
   const post = posts.find((p) => p.slug === slug);
 
   if (!post) return <p>Post not found</p>;
 
   return (
-    <div className="container mx-auto p-4 max-w-3xl">
+    <div className="container mx-auto p-4 max-w-3xl mt-16">
       <Link href="/blog" className="text-blue-600 mb-4 block">
         &larr; Back to all posts
       </Link>
@@ -26,7 +27,8 @@ export default function BlogPost({ params }: { params: BlogParams }) {
   );
 }
 
-export function generateStaticParams() {
+// ✅ Generate Static Params untuk Pre-rendering (SSG)
+export async function generateStaticParams() {
   return posts.map((post) => ({
     slug: post.slug,
   }));

@@ -28,7 +28,7 @@ function Hero() {
           Turning complex problems into elegant solutions
         </h2>
         <Button label="Let's Work Together" />
-        <div className="flex gap-2 items-center">
+        <div className="flex gap-2 items-center ">
           {images.map((image, index) => (
             <Image
               key={index}
@@ -65,13 +65,12 @@ function Hero() {
 
         <div>
           {items.map((item, index) => (
-            <div key={index} className="flex gap-2  justify-between">
+            <div key={`item-${index}`} className="flex gap-2  justify-between">
               <div
                 key={index}
                 className={`flex gap-2 py-4 justify-between items-center 
                 ${index !== 0 ? "border-t border-gray-200" : ""}`}
               >
-                {" "}
                 <Image src={item.icon} width={24} height={24} alt="Icon" />
                 <p>{item.text}</p>
               </div>
